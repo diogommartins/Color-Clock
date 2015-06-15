@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblMinutes;
 @property (weak, nonatomic) IBOutlet UILabel *lblSeconds;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *lblDividers;
+@property (weak, nonatomic) IBOutlet UILabel *lblHexValue;
 
 @property (strong, nonatomic) DMClock * clock;
 

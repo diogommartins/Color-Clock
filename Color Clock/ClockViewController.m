@@ -37,9 +37,9 @@
     CALayer *shadowLayer = [CALayer layer];
     shadowLayer.masksToBounds = YES;
     shadowLayer.shadowOffset = CGSizeMake(0, 3);
-    shadowLayer.shadowRadius = 100.0f;
-    shadowLayer.shadowOpacity = 0.8f;
-    shadowLayer.shadowColor = [UIColor whiteColor].CGColor;
+    shadowLayer.shadowRadius = 150.0f;
+    shadowLayer.shadowOpacity = 0.5f;
+    shadowLayer.shadowColor = [UIColor blackColor].CGColor;
     shadowLayer.shadowPath = [UIBezierPath bezierPathWithRect: view.bounds].CGPath;
     shadowLayer.cornerRadius = 3; // if you like rounded corners
     shadowLayer.frame = view.layer.bounds;
@@ -52,6 +52,8 @@
     [self.lblHours setText: [NSString stringWithFormat:@"%02i", self.clock.hours]];
     [self.lblMinutes setText: [NSString stringWithFormat:@"%02i", self.clock.minutes]];
     [self.lblSeconds setText: [NSString stringWithFormat:@"%02i", self.clock.seconds]];
+    [self.lblHexValue setText: [NSString stringWithFormat:@"#%02x%02x%02x", self.clock.hours,
+                                self.clock.minutes, self.clock.seconds]];
 }
 
 -(CGFloat)colorFromInt:(int)value
