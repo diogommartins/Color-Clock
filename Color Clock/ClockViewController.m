@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self dropShadowOnView: self.shadowLayerView];
+//    [self dropShadowOnView: self.shadowLayerView];
     self.clock = [[DMClock alloc] initWithTimeInterval:1.0 delegate: self];
     [self.clock start];
 }
