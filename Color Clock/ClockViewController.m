@@ -8,13 +8,13 @@
 
 #import "ClockViewController.h"
 #define BRIGHTNESS_INCREASE 10
+#define MAX_COLOR_VALUE 255.0
 
 @interface ClockViewController ()
 
--(void)dropShadowOnView: (UIView *)view;
--(void) updateLabels;
--(void) updateBackgroundColor;
--(CGFloat)colorFromInt: (int)value;
+-(void)updateLabelsWithColor: (UIColor *) color;
+-(void)updateBackgroundWithColor: (UIColor *) color;
+-(CGFloat)colorComponentFromInt: (int)value maxValue:(int)maxValue;
 
 @end
 
@@ -22,8 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self dropShadowOnView: self.shadowLayerView];
-    self.clock = [[DMClock alloc] initWithTimeInterval:1.0 delegate: self];
+    self.clock = [[DMClock alloc] initWithTimeInterval: 1.0
+                                              delegate: self];
     [self.clock start];
 }
 
@@ -32,48 +32,47 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)dropShadowOnView:(UIView *)view
+-(NSString *)hexFromColor:(UIColor *)color
 {
-    CALayer *shadowLayer = [CALayer layer];
-    shadowLayer.masksToBounds = YES;
-    shadowLayer.shadowOffset = CGSizeMake(0, 3);
-    shadowLayer.shadowRadius = 150.0f;
-    shadowLayer.shadowOpacity = 0.5f;
-    shadowLayer.shadowColor = [UIColor blackColor].CGColor;
-    shadowLayer.shadowPath = [UIBezierPath bezierPathWithRect: view.bounds].CGPath;
-    shadowLayer.cornerRadius = 3; // if you like rounded corners
-    shadowLayer.frame = view.layer.bounds;
-    
-    [view.layer addSublayer:shadowLayer];
+    const CGFloat *components = CGColorGetComponents(color.CGColor);
+
+    int red = round(components[0] * 255);
+    int green = round(components[1] * 255);
+    int blue = round(components[2] * 255);
+
+    return [NSString stringWithFormat:@"#%02x%02x%02x", red, green, blue];
 }
 
--(void)updateLabels
+-(void)updateLabelsWithColor: (UIColor *) color
 {
     [self.lblHours setText: [NSString stringWithFormat:@"%02i", self.clock.hours]];
     [self.lblMinutes setText: [NSString stringWithFormat:@"%02i", self.clock.minutes]];
     [self.lblSeconds setText: [NSString stringWithFormat:@"%02i", self.clock.seconds]];
-    [self.lblHexValue setText: [NSString stringWithFormat:@"#%02x%02x%02x", self.clock.hours,
-                                self.clock.minutes, self.clock.seconds]];
+
+    [self.lblHexValue setText: [self hexFromColor:color]];
 }
 
--(CGFloat)colorFromInt:(int)value
+-(CGFloat)colorComponentFromInt:(int)value maxValue:(int)maxValue
 {
-    return value / 255.0 * BRIGHTNESS_INCREASE;
+    return ((MAX_COLOR_VALUE * value) / maxValue) / MAX_COLOR_VALUE;
 }
 
--(void)updateBackgroundColor
+-(void)updateBackgroundWithColor: (UIColor *) color
 {
-    UIColor * color = [UIColor colorWithRed: [self colorFromInt:self.clock.hours]
-                                      green: [self colorFromInt:self.clock.minutes]
-                                       blue: [self colorFromInt:self.clock.seconds]
-                                      alpha: 10.0];
     [self.view setBackgroundColor: color];
 }
 
+# pragma mark - DMClockDelegate implementation
+
 -(void)clockDidUpdate
 {
-    [self updateLabels];
-    [self updateBackgroundColor];
+    UIColor * color = [UIColor colorWithRed: [self colorComponentFromInt:self.clock.hours maxValue:24]
+                                      green: [self colorComponentFromInt:self.clock.minutes maxValue:60]
+                                       blue: [self colorComponentFromInt:self.clock.seconds maxValue:60]
+                                      alpha: 1.0];
+
+    [self updateLabelsWithColor: color];
+    [self updateBackgroundWithColor: color];
 }
 
 @end

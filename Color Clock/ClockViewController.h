@@ -11,11 +11,10 @@
 
 @interface ClockViewController : UIViewController <DMClockDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *shadowLayerView;
 @property (weak, nonatomic) IBOutlet UILabel *lblHours;
 @property (weak, nonatomic) IBOutlet UILabel *lblMinutes;
 @property (weak, nonatomic) IBOutlet UILabel *lblSeconds;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *lblDividers;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *lblSeparators;
 @property (weak, nonatomic) IBOutlet UILabel *lblHexValue;
 
 @property (strong, nonatomic) DMClock * clock;
