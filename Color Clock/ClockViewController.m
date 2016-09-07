@@ -8,13 +8,12 @@
 
 #import "ClockViewController.h"
 #define BRIGHTNESS_INCREASE 10
-#define MAX_COLOR_VALUE 255.0
+
 
 @interface ClockViewController ()
 
 -(void)updateLabelsWithColor: (UIColor *) color;
 -(void)updateBackgroundWithColor: (UIColor *) color;
--(CGFloat)colorComponentFromInt: (int)value maxValue:(int)maxValue;
 
 @end
 
@@ -32,16 +31,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(NSString *)hexFromColor:(UIColor *)color
-{
-    const CGFloat *components = CGColorGetComponents(color.CGColor);
 
-    int red = round(components[0] * 255);
-    int green = round(components[1] * 255);
-    int blue = round(components[2] * 255);
-
-    return [NSString stringWithFormat:@"#%02x%02x%02x", red, green, blue];
-}
 
 -(void)updateLabelsWithColor: (UIColor *) color
 {
@@ -49,13 +39,9 @@
     [self.lblMinutes setText: [NSString stringWithFormat:@"%02i", self.clock.minutes]];
     [self.lblSeconds setText: [NSString stringWithFormat:@"%02i", self.clock.seconds]];
 
-    [self.lblHexValue setText: [self hexFromColor:color]];
+    [self.lblHexValue setText: [UIColor hexFromColor:color]];
 }
 
--(CGFloat)colorComponentFromInt:(int)value maxValue:(int)maxValue
-{
-    return ((MAX_COLOR_VALUE * value) / maxValue) / MAX_COLOR_VALUE;
-}
 
 -(void)updateBackgroundWithColor: (UIColor *) color
 {
@@ -66,9 +52,9 @@
 
 -(void)clockDidUpdate
 {
-    UIColor * color = [UIColor colorWithRed: [self colorComponentFromInt:self.clock.hours maxValue:24]
-                                      green: [self colorComponentFromInt:self.clock.minutes maxValue:60]
-                                       blue: [self colorComponentFromInt:self.clock.seconds maxValue:60]
+    UIColor * color = [UIColor colorWithRed: [UIColor colorComponentFromInt:self.clock.hours maxValue:24]
+                                      green: [UIColor colorComponentFromInt:self.clock.minutes maxValue:60]
+                                       blue: [UIColor colorComponentFromInt:self.clock.seconds maxValue:60]
                                       alpha: 1.0];
 
     [self updateLabelsWithColor: color];

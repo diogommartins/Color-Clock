@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DMClock.h"
+#import "UIColor+HexUtils.h"
 
 @interface ClockViewController : UIViewController <DMClockDelegate>
 

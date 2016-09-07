@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		668CA6A31B2E95CD0017A10B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 668CA6A21B2E95CD0017A10B /* main.m */; };
 		668CA6A61B2E95CD0017A10B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 668CA6A51B2E95CD0017A10B /* AppDelegate.m */; };
-		668CA6A91B2E95CD0017A10B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 668CA6A81B2E95CD0017A10B /* ViewController.m */; };
-		668CA6AC1B2E95CD0017A10B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 668CA6AA1B2E95CD0017A10B /* Main.storyboard */; };
 		668CA6AE1B2E95CD0017A10B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 668CA6AD1B2E95CD0017A10B /* Images.xcassets */; };
 		668CA6B11B2E95CD0017A10B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 668CA6AF1B2E95CD0017A10B /* LaunchScreen.xib */; };
 		668CA6BD1B2E95CD0017A10B /* Color_ClockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 668CA6BC1B2E95CD0017A10B /* Color_ClockTests.m */; };
+		66FA17721D7F0F87007B3B26 /* ClockViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 66FA176E1D7F0F87007B3B26 /* ClockViewController.h */; };
+		66FA17731D7F0F87007B3B26 /* ClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FA176F1D7F0F87007B3B26 /* ClockViewController.m */; };
+		66FA17741D7F0F87007B3B26 /* DMClock.h in Sources */ = {isa = PBXBuildFile; fileRef = 66FA17701D7F0F87007B3B26 /* DMClock.h */; };
+		66FA17751D7F0F87007B3B26 /* DMClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FA17711D7F0F87007B3B26 /* DMClock.m */; };
+		66FA17771D7F1121007B3B26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66FA17761D7F1121007B3B26 /* Main.storyboard */; };
+		66FA177E1D8061EF007B3B26 /* UIColor+HexUtils.h in Sources */ = {isa = PBXBuildFile; fileRef = 66FA177C1D8061EF007B3B26 /* UIColor+HexUtils.h */; };
+		66FA177F1D8061EF007B3B26 /* UIColor+HexUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FA177D1D8061EF007B3B26 /* UIColor+HexUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +37,18 @@
 		668CA6A21B2E95CD0017A10B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		668CA6A41B2E95CD0017A10B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		668CA6A51B2E95CD0017A10B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		668CA6A71B2E95CD0017A10B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		668CA6A81B2E95CD0017A10B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		668CA6AB1B2E95CD0017A10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		668CA6AD1B2E95CD0017A10B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		668CA6B01B2E95CD0017A10B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		668CA6B61B2E95CD0017A10B /* Color ClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Color ClockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		668CA6BB1B2E95CD0017A10B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		668CA6BC1B2E95CD0017A10B /* Color_ClockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Color_ClockTests.m; sourceTree = "<group>"; };
+		66FA176E1D7F0F87007B3B26 /* ClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = ClockViewController.h; sourceTree = "<group>"; };
+		66FA176F1D7F0F87007B3B26 /* ClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockViewController.m; sourceTree = "<group>"; };
+		66FA17701D7F0F87007B3B26 /* DMClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; path = DMClock.h; sourceTree = "<group>"; };
+		66FA17711D7F0F87007B3B26 /* DMClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMClock.m; sourceTree = "<group>"; };
+		66FA17761D7F1121007B3B26 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		66FA177C1D8061EF007B3B26 /* UIColor+HexUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = "UIColor+HexUtils.h"; path = "../UIColor+HexUtils.h"; sourceTree = "<group>"; };
+		66FA177D1D8061EF007B3B26 /* UIColor+HexUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexUtils.m"; path = "../UIColor+HexUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +90,15 @@
 		668CA69F1B2E95CD0017A10B /* Color Clock */ = {
 			isa = PBXGroup;
 			children = (
+				66FA177C1D8061EF007B3B26 /* UIColor+HexUtils.h */,
+				66FA177D1D8061EF007B3B26 /* UIColor+HexUtils.m */,
+				66FA17761D7F1121007B3B26 /* Main.storyboard */,
+				66FA176E1D7F0F87007B3B26 /* ClockViewController.h */,
+				66FA176F1D7F0F87007B3B26 /* ClockViewController.m */,
+				66FA17701D7F0F87007B3B26 /* DMClock.h */,
+				66FA17711D7F0F87007B3B26 /* DMClock.m */,
 				668CA6A41B2E95CD0017A10B /* AppDelegate.h */,
 				668CA6A51B2E95CD0017A10B /* AppDelegate.m */,
-				668CA6A71B2E95CD0017A10B /* ViewController.h */,
-				668CA6A81B2E95CD0017A10B /* ViewController.m */,
-				668CA6AA1B2E95CD0017A10B /* Main.storyboard */,
 				668CA6AD1B2E95CD0017A10B /* Images.xcassets */,
 				668CA6AF1B2E95CD0017A10B /* LaunchScreen.xib */,
 				668CA6A01B2E95CD0017A10B /* Supporting Files */,
@@ -199,9 +212,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				668CA6AC1B2E95CD0017A10B /* Main.storyboard in Resources */,
 				668CA6B11B2E95CD0017A10B /* LaunchScreen.xib in Resources */,
 				668CA6AE1B2E95CD0017A10B /* Images.xcassets in Resources */,
+				66FA17771D7F1121007B3B26 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +232,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				668CA6A91B2E95CD0017A10B /* ViewController.m in Sources */,
+				66FA17741D7F0F87007B3B26 /* DMClock.h in Sources */,
 				668CA6A61B2E95CD0017A10B /* AppDelegate.m in Sources */,
+				66FA17731D7F0F87007B3B26 /* ClockViewController.m in Sources */,
+				66FA177F1D8061EF007B3B26 /* UIColor+HexUtils.m in Sources */,
+				66FA177E1D8061EF007B3B26 /* UIColor+HexUtils.h in Sources */,
+				66FA17721D7F0F87007B3B26 /* ClockViewController.h in Sources */,
 				668CA6A31B2E95CD0017A10B /* main.m in Sources */,
+				66FA17751D7F0F87007B3B26 /* DMClock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +262,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		668CA6AA1B2E95CD0017A10B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				668CA6AB1B2E95CD0017A10B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		668CA6AF1B2E95CD0017A10B /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -416,6 +426,7 @@
 				668CA6C21B2E95CD0017A10B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		668CA6C31B2E95CD0017A10B /* Build configuration list for PBXNativeTarget "Color ClockTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +435,7 @@
 				668CA6C51B2E95CD0017A10B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
